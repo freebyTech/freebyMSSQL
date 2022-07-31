@@ -23,3 +23,12 @@ docker cp ./$dacpac tiv-sql-localtest:/opt/downloads/$dacpac
 docker exec -it tiv-sql-localtest bash -c "dotnet /opt/sqlpackage/sqlpackage.dll /Action:Publish /TargetConnectionString:\"Data Source=localhost;User ID=sa;Password=$pswd;Database=$db;Pooling=False\" /SourceFile:/opt/downloads/$dacpac /p:CreateNewDatabase=true"
 
 ```
+
+More info about SQLPackage can be found here: https://docs.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-download?view=sql-server-ver16
+
+# Related Information
+
+| Description                      | URL                                                    |
+| -------------------------------- | ------------------------------------------------------ |
+| SQL Package Latest Download      | https://docs.microsoft.com/en-us/sql/tools/sqlpackage/sqlpackage-download?view=sql-server-ver16 |
+| SQL Package Release Notes        | https://docs.microsoft.com/en-us/sql/tools/sqlpackage/release-notes-sqlpackage?view=sql-server-ver16 |

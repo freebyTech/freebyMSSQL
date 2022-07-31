@@ -23,12 +23,12 @@ RUN locale-gen en_US.UTF-8 && \
 RUN mkdir -p /opt/downloads
 WORKDIR /opt/downloads
 
-RUN apt-get update && ACCEPT_EULA=Y apt-get install -y dotnet-sdk-2.1 
+RUN apt-get update && ACCEPT_EULA=Y apt-get install -y dotnet-sdk-3.1 
 
 RUN echo PATH="$PATH:/opt/mssql-tools/bin:/opt/sqlpackage" >> ~/.bash_profile
 RUN echo 'export PATH="$PATH:/opt/mssql-tools/bin:/opt/sqlpackage"' >> ~/.bashrc
 
-RUN curl -Lq https://go.microsoft.com/fwlink/?linkid=2069122 -o sqlpackage-linux-x64-latest.zip && \
+RUN curl -Lq https://aka.ms/sqlpackage-linux -o sqlpackage-linux-x64-latest.zip && \
   ls -alh && \
   unzip sqlpackage-linux-x64-latest.zip -d /opt/sqlpackage && \
   rm /opt/downloads/sqlpackage-linux-x64-latest.zip
